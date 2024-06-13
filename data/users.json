@@ -1,0 +1,17 @@
+{
+    "694215003347091564": {
+        "telegram_id": "920981939",
+        "settings": {
+            "tg_notifs": "false",
+            "dc_notifs": "true",
+            "greenhouse": "true",
+            "restock": "true"
+        },
+        "reminders": {
+            "gather": "1718300756",
+            "research": "1718299283",
+            "cook": "1718290653",
+            "restock": "1718294400"
+        }
+    }
+}
