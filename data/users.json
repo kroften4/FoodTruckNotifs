@@ -13,5 +13,17 @@
             "cook": "1718290653",
             "restock": "1718294400"
         }
+    },
+    "579390339161391166": {
+        "telegram_id": "1396447517",
+        "settings": {
+            "tg_notifs": "false",
+            "dc_notifs": "true",
+            "greenhouse": "true",
+            "restock": "true"
+        },
+        "reminders": {
+            "restock": "1718380800"
+        }
     }
 }

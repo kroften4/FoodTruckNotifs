@@ -20,7 +20,7 @@ def run():
 
     @bot.message_handler(commands=['start', 'hello'])
     def start(message: telebot.types.Message):
-        bot.reply_to(message, "HAIII")
+        bot.reply_to(message, "Hi! Type /code to get the code for discord bot")
 
     @bot.message_handler(commands=['connect', 'code'])
     def start(message: telebot.types.Message):
@@ -33,7 +33,7 @@ def run():
         data_from_json[user_id] = code
         with open("data/user_confirmation_codes.json", "w") as f_o:
             json.dump(data_from_json, f_o, indent=4)
-        # TODO: start a thread which will remove the code from the database after a timeout
+        # TODO: start a job which will remove the code from the database after a timeout
         bot.reply_to(
             message,
             f"Your code: `{code}`\n\nSend it to the discord bot via `/ft-connect-tg code: {code}`",
