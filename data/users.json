@@ -1,6 +1,6 @@
 {
     "694215003347091564": {
-        "telegram_id": "920981939",
+        "telegram_id": "unset",
         "settings": {
             "tg_notifs": "false",
             "dc_notifs": "true",
@@ -8,10 +8,10 @@
             "restock": "true"
         },
         "reminders": {
-            "gather": "1718300756",
-            "research": "1718299283",
-            "cook": "1718290653",
-            "restock": "1718294400"
+            "gather": "1718371636",
+            "research": "1718386590",
+            "cook": "1718364475",
+            "restock": "1718380800"
         }
     },
     "579390339161391166": {

@@ -1,5 +1,7 @@
 import json
 import os
+import time
+
 import dotenv
 import telebot
 import random
@@ -30,13 +32,14 @@ def run():
         user_id = str(message.from_user.id)
         if user_id in data_from_json:
             bot.send_message(message.chat.id, "Updating your code...")
-        data_from_json[user_id] = code
+        data_from_json[user_id] = {"code": code, "timeout": time.time() + 5 * 60}
         with open("data/user_confirmation_codes.json", "w") as f_o:
             json.dump(data_from_json, f_o, indent=4)
         # TODO: start a job which will remove the code from the database after a timeout
         bot.reply_to(
             message,
-            f"Your code: `{code}`\n\nSend it to the discord bot via `/ft-connect-tg code: {code}`",
+            f"Your code: `{code}`\n\nSend it to the discord bot via `/ft-connect-tg code: {code}`\n"
+            f"The code will reset in 5 minutes",
             parse_mode="MarkdownV2"
         )
 

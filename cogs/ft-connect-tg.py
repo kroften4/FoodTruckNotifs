@@ -22,11 +22,12 @@ class FTConnectTG(commands.Cog):
 
         with open("data/user_confirmation_codes.json", "r") as f_o:
             code_data_from_json: dict = json.load(f_o)
-        if code not in code_data_from_json.values():
+        codes = {tg_id: code_data_from_json[tg_id]["code"] for tg_id in code_data_from_json}
+        if code not in codes.values():
             await ctx.respond("You don't have a code or the code is invalid! "
                               "Recieve it from @FoodTruckNotifsBot on telegram via `/code`")
             return
-        tg_user_id = list(code_data_from_json.keys())[list(code_data_from_json.values()).index(code)]
+        tg_user_id = list(codes.keys())[list(codes.values()).index(code)]
 
         users_data_from_json[dc_user_id]["telegram_id"] = tg_user_id
         with open("data/users.json", "w") as f_o:
@@ -37,6 +38,7 @@ class FTConnectTG(commands.Cog):
             json.dump(code_data_from_json, f_o, indent=4)
 
         await ctx.respond("Connected your telegram id to you!")
+        pass
 
 
 def setup(bot):
